@@ -10,7 +10,7 @@ En esta práctica se estudia el motor de física de Unity: la diferencia entre o
 
 **Configuración:** plano y esfera solo con Collider; cubo con Rigidbody.
 
-El cubo cae por la gravedad y se queda sobre el plano. Al chocar con la esfera, esta no se mueve: sin Rigidbody es un obstáculo estático, como una pared.
+El cubo cae por la gravedad y se queda sobre el plano. 
 
 ![Situación 1](Gifs/Situacion1.gif)
 
@@ -20,7 +20,7 @@ El cubo cae por la gravedad y se queda sobre el plano. Al chocar con la esfera, 
 
 **Configuración:** plano solo con Collider; cubo y esfera con Rigidbody.
 
-Los dos objetos caen y se quedan sobre el plano. Al chocar se empujan mutuamente: la esfera rueda y el cubo se desplaza o gira. Como tienen la misma masa, el empuje es parecido en ambos sentidos.
+Los dos objetos caen y se quedan sobre el plano. Al chocar se empujan mutuamente: la esfera rueda y el cubo se desplaza.
 
 ![Situación 2](Gifs/Situacion2.gif)
 
@@ -30,7 +30,7 @@ Los dos objetos caen y se quedan sobre el plano. Al chocar se empujan mutuamente
 
 **Configuración:** plano solo con Collider; cubo con Rigidbody; esfera con Rigidbody *Is Kinematic*.
 
-La esfera no cae ni reacciona a los golpes. El cubo choca con ella, pero no consigue moverla. Un objeto cinemático afecta a los demás, pero los demás no le afectan a él.
+La esfera no cae ni reacciona. Un objeto cinemático afecta a los demás, pero los demás no le afectan a él.
 
 ![Situación 3](Gifs/Situacion3.gif)
 
@@ -50,7 +50,7 @@ El plano también se ve afectado por la gravedad, así que los tres objetos caen
 
 **Configuración:** plano con Rigidbody *Is Kinematic*; cubo con masa 1; esfera con masa 10.
 
-El plano se queda fijo y sostiene a los demás. Al chocar, el cubo apenas mueve la esfera, mientras que la esfera empuja al cubo con facilidad.
+El plano se queda fijo y sostiene a los demás. Al chocar, el cubo mueve la esfera, mientras que la esfera empuja al cubo desplazándolo levemente.
 
 ![Situación 5](Gifs/Situacion5.gif)
 
@@ -60,7 +60,7 @@ El plano se queda fijo y sostiene a los demás. Al chocar, el cubo apenas mueve 
 
 **Configuración:** igual que la situación 5, con la esfera de masa 100.
 
-La diferencia es aún mayor: para el cubo, la esfera es prácticamente inamovible, casi como un objeto estático.
+La diferencia es aún mayor: para el cubo, la esfera es prácticamente inamovible, casi como un objeto estático. El cubo se desplaza mucho más.
 
 ![Situación 6](Gifs/Situacion6.gif)
 
@@ -70,7 +70,7 @@ La diferencia es aún mayor: para el cubo, la esfera es prácticamente inamovibl
 
 **Configuración:** los tres con Rigidbody; la esfera con un Physic Material de fricción alta.
 
-Como el plano es físico, vuelve a caer junto con los demás. La fricción hace que la esfera pierda velocidad antes cuando desliza o es empujada sobre una superficie.
+La fricción hace que la esfera pierda velocidad antes cuando desliza o es empujada sobre una superficie.
 
 ![Situación 7](Gifs/Situacion7.gif)
 
@@ -80,7 +80,7 @@ Como el plano es físico, vuelve a caer junto con los demás. La fricción hace 
 
 **Configuración:** plano cinemático; cubo con Rigidbody; esfera con Rigidbody *Is Kinematic* y Collider con *Is Trigger*.
 
-La esfera se queda en su sitio y deja de ser sólida: el cubo la atraviesa sin chocar. En lugar de `OnCollisionEnter`, se ejecutan `OnTriggerEnter` al entrar y `OnTriggerExit` al salir.
+La esfera se queda en su sitio y deja de ser sólida.
 
 ![Situación 8](Gifs/Situacion8.gif)
 
@@ -90,6 +90,6 @@ La esfera se queda en su sitio y deja de ser sólida: el cubo la atraviesa sin c
 
 **Configuración:** plano cinemático; cubo con Rigidbody; esfera con Rigidbody dinámico y Collider con *Is Trigger*.
 
-La esfera cae por la gravedad, pero, al ser trigger, no choca con el plano: lo atraviesa y sigue cayendo. Se ejecuta `OnTriggerEnter` al pasar por el plano. Un trigger detecta contactos, pero no tiene respuesta física.
+La esfera cae por la gravedad, pero, al ser trigger, no choca con el plano: lo atraviesa y sigue cayendo. 
 
 ![Situación 9](Gifs/Situacion9.gif)
